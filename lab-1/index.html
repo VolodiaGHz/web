@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab 1</title>
+	<style type="text/css">
+   TABLE {
+    width: 1000px; 
+    border: 1px solid black; 
+   }
+   TD, TH {
+    padding: 3px; 
+   }
+   TH {
+    text-align: center; 
+    background: black; 
+    color: white; 
+   }
+  </style>
+</head>
+<body>
+	<p><b>You are here:<a href=""> Home</a> ‣ <a href="">Dive Into HTML5</a> ‣</b></p>
+	<h1><center><strong>№1</strong></center></h1>
+	<h1><center><strong>HOW DID WE GET HERE?</strong></center></h1>
+	<p><center><a href="">show table of contents</a></center></p>
+	<br>
+	<h2><center> ❧</center></h2>
+	<br>
+	<h1><center><strong>DIVING IN</strong></center></h1>
+	<p><img src="aoc-r.png">ecently, I stumbled across a quote from a Mozilla developer<a href="">about the tension inherent in creating standards:</a></p>
+	<p>Implementations and specifications have to do a delicate dance together. You don’t want </p>
+	<p>implementations to happen before the specification is finished, because people start depending on the </p>
+	<p>details of implementations and that constrains the specification. However, you also don’t want the specification to </p>
+	<p>be finished before there are implementations and author experience with those implementations, because you</p>
+	<p>need the feedback. There is unavoidable tension here, but we just have to muddle on through.</p>
+	<br>
+	<p>Keep this quote in the back of your mind, and let me explain how HTML5 came to be.</p>
+	<p><img src="an.png"></p>
+	<br>
+	<h2><center>❧</center></h2>
+	<br>
+	<h1><center><strong>MIME TYPES</strong></center></h1>
+	<p>This book is about HTML5, not previous versions of HTML, and not any version of XHTML. But to understand the history</p>
+	<p>of HTML5 and the motivations behind it, you need to understand a few technical details first. Specifically, MIME types.</p>
+	<br>
+
+	<p>Every time your web browser requests a page, the web server sends “headers” before it sends the actual page markup. These</p>
+	<p>headers are normally invisible, although there are web development tools that will make them visible if you’re interested.</p>
+	<p>But the headers are important, because they tell your browser how to interpret the page markup that follows. The most</p>
+	<p>important header is called Content-Type, and it looks like this:</p>
+	<br>
+	<p>Content-Type: text/html</p>
+	<br>
+	<p>“text/html” is called the “content type” or “MIME type” of the page. This header is the only thing that determines what a</p>
+	<p>particular resource truly is, and therefore how it should be rendered. Images have their own MIME types (image/jpeg for</p>
+	<p> JPEG images, image/png for PNG images, and so on). JavaScript files have their own MIME type. CSS stylesheets have</p>
+	<p>  their own MIME type. Everything has its own MIME type. The web runs on MIME types.</p>
+	<br>
+
+	<p>Of course, reality is more complicated than that. The first generation of web servers (and I’m talking web servers from</p>
+	<p> 1993) didn’t send the Content-Type header because it didn’t exist yet. (It wasn’t invented until 1994.) For compatibility</p>
+	<p>reasons that date all the way back to 1993, some popular web browsers will ignore the Content-Type header under certain</p>
+	<p>circumstances. (This is called “content sniffing.”) But as a general rule of thumb, everything you’ve ever looked at on the</p>
+	<p>web — HTML pages, images, scripts, videos, PDFs, anything with a URL — has been served to you with a specific MIME </p>
+	<p>type in the Content-Type header.</p>
+	<br>
+
+	<p>Tuck that under your hat. We’ll come back to it.</p>
+	<br>
+
+	<h2><center>❧</center></h2>
+	<br>
+	<h1><center><strong>A LONG DIGRESSION INTO HOW STANDARDS ARE MADE</strong></center></h1>
+	<p>Why do we have an <.img.> element? That’s not a question you hear</p>
+	<p>every day. Obviously someone must have created it. These things don’t</p>
+	<p>just appear out of nowhere. Every element, every attribute, every feature</p>
+	<p>of HTML that you’ve ever used — someone created them, decided how</p>
+	<p>they should work, and wrote it all down. These people are not gods,or</p>
+	<p>people.</p>
+	<p><img src="mk.png"></p>
+	<p>One of the great things about standards that are developed “out in the</p>
+	<p>open” is that you can go back in time and answer these kinds of</p>
+	<p>questions. Discussions occur on mailing lists, which are usually archived</p>
+	<p>and publicly searchable. So I decided to do a bit of “email archaeology”</p>
+	<p>to try to answer the question, “Why do we have an <.img.> element?” I</p>
+	<p>had to go back to before there was an organization called the World</p>
+	<p>Wide Web Consortium (W3C). I went back to the earliest days of the</p>
+	<p>web, when you could count the number of web servers with both hands</p>
+	<p>and maybe a couple of toes.</p>
+	<br>
+	<p><em>(There are a number of typographical errors in the following quotes. I have decided to leave them intact for historical accuracy.)</em></p>
+	<br>
+	<p>On February 25, 1993, <a href="">Marc Andreessen wrote:</a></p>
+	<br>
+	<p style="text-indent: 25px;">I’d like to propose a new, optional HTML tag:</p>
+	<br>
+	<p style="text-indent: 25px;">IMG</p>
+	<br>
+	<p style="text-indent: 25px;">Required argument is SRC="url".</p>
+	<br>
+	<p style="text-indent: 25px;">This names a bitmap or pixmap file for the browser to attempt to pull over the network and interpret as an</p>
+	<p style="text-indent: 25px;">image, to be embedded in the text at the point of the tag’s occurrence.</p>
+	<br>
+	<p style="text-indent: 25px;">An example is:</p>
+	<br>
+	<p style="text-indent: 25px;"><.IMG SRC="file://foobar.com/foo/bar/blargh.xbm"></p>
+	<br>
+	<p style="text-indent: 25px;">.....(There is no closing tag; this is just a standalone tag.)</p>
+	<br>
+	<p style="text-indent: 25px;">This tag can be embedded in an anchor like anything else; when that happens, it becomes an icon that’s</p>
+	<p style="text-indent: 25px;">sensitive to activation just like a regular text anchor.</p>
+	<br>
+	<p style="text-indent: 25px;">Browsers should be afforded flexibility as to which image formats they support. Xbm and Xpm are good ones to</p>
+	<p style="text-indent: 25px;">support, for example. If a browser cannot interpret a given format, it can do whatever it wants instead (X Mosaic</p>
+	<p style="text-indent: 25px;">will pop up a default bitmap as a placeholder).</p>
+	<br>
+	<p style="text-indent: 25px;">This is required functionality for X Mosaic; we have this working, and we’ll at least be using it internally. I’m</p>
+	<p style="text-indent: 25px;">certainly open to suggestions as to how this should be handled within HTML; if you have a better idea than</p>
+	<p style="text-indent: 25px;">what I’m presenting now, please let me know. I know this is hazy wrt image format, but I don’t see an</p>
+	<p style="text-indent: 25px;">alternative than to just say “let the browser do what it can” and wait for the perfect solution to come along</p>
+	<p style="text-indent: 25px;">(MIME, someday, maybe).</p>
+	<br>
+	<p><a href="">Xbm</a> and <a href=""> Xpm</a> were popular graphics formats on Unix systems.</p>
+	<br>
+	<p>“Mosaic” was one of the earliest web browsers. (“X Mosaic” was the version that ran on Unix systems.) When he wrote this</p>
+	<p>message in early 1993,<a href=""> Marc Andreessen</a> had not yet founded the company that made him famous, <a href="">Mosaic Communications</a></p>
+	<p>  <a href="">Corporation</a>, nor had he started work on that company’s flagship product, “Mosaic Netscape.” (You may know them better</p>
+	<p>   by their later names, “Netscape Corporation” and “Netscape Navigator.”)</p>
+	<br>
+	<p>“MIME, someday, maybe” is a reference to <a href="">content negotiation</a>, a feature of HTTP where a client (like a web browser) tells</p>
+	<p>the server (like a web server) what types of resources it supports (like image/jpeg) so the server can return something in</p>
+	<p>the client’s preferred format. <a href="">The Original HTTP as defined in 1991</a> (the only version that was implemented in February</p>
+	<p>1993) did not have a way for clients to tell servers what kinds of images they supported, thus the design dilemma that Marc</p>
+	<p>faced.</p>
+	<br>
+	<p>A few hours later, <a href="">Tony Johnson replied:</a></p>
+	<p style="text-indent: 25px;">I have something very similar in Midas 2.0 (in use here at SLAC, and due for public release any week now), </p>
+	<p style="text-indent: 25px;">except that all the names are different, and it has an extra argument NAME="name". It has almost exactly the </p>
+	<p style="text-indent: 25px;">same functionality as your proposed IMG tag. e.g.</p>
+	<br>
+	<p style="text-indent: 25px;"><.ICON name="NoEntry" href="http://note/foo/bar/NoEntry.xbm"></p>
+	<br>
+	<p style="text-indent: 25px;">The idea of the name parameter was to allow the browser to have a set of “built in” images. If the name matches </p>
+	<p style="text-indent: 25px;">a “built in” image it would use that instead of having to go out and fetch the image. The name could also act as </p>
+	<p style="text-indent: 25px;">a hint for “line mode” browsers as to what kind of a symbol to put in place of the image.
+</p>
+<br>
+	<p style="text-indent: 25px;">I don’t much care about the parameter or tag names, but it would be sensible if we used the same things. I don’t </p>
+	<p style="text-indent: 25px;">much care for abbreviations, ie why not IMAGE= and SOURCE=. I somewhat prefer ICON since it imlies that the </p>
+	<p style="text-indent: 25px;">IMAGE should be smallish, but maybe ICON is an overloaded word?</p>
+	<br>
+	<p><a href = "">Midas</a> was another early web browser, a contemporary of X Mosaic. It was cross-platform; it ran on both Unix and VMS.</p>
+	<p>“SLAC” refers to the <a href = "">Stanford Linear Accelerator Center</a>, now the SLAC National Accelerator Laboratory, that hosted the></p>
+	<p>first web server in theUnited States (in fact the <a href = "">first web server outside Europe</a>). When <a href = "">Tony</a> wrote this message, SLAC</p>
+	<p>was an old-timer on the WWW, having hosted <a href = "">five pages</a> on its web server for a whopping 441 days.</p>
+	<br>
+	<p>Tony continued:</p>
+	<p style="text-indent: 25px;">While we are on the subject of new tags, I have another, somewhat similar tag, which I would like to support in</p>
+	<p style="text-indent: 25px;">Midas 2.0. In principle it is:</p>
+	<br>
+	<p style="text-indent: 25px;"><.INCLUDE HREF="..."></p>
+	<br>
+	<p style="text-indent: 25px;">The intention here would be that the second document is to be included into the first document at the place</p>
+	<p style="text-indent: 25px;">where the tag occured. In 	principle the referenced document could be anything, but the main purpose was to</p>
+	<p style="text-indent: 25px;"> allow images (in this case arbitrary sized) to be embedded into documents. Again the intention would be that</p>
+	<p style="text-indent: 25px;"> when HTTP2 comes along the format of the included document would be up for separate negotiation.</p>
+	<br>
+	<p>“HTTP2” is a reference to <a href="">Basic HTTP as defined in 1992.</a> At this point, in early 1993, it was still largely unimplemented.</p>
+	<p>The draft known as “HTTP2” evolved and was eventually standardized as “HTTP 1.0” (albeit <a href="">not for another three years</a>).</p>
+	<p>HTTP 1.0 did include <a href = "">request headers for content negotiation</a>, a.k.a. “MIME, someday, maybe.”</p>
+	<br>
+	<p>Tony continued:</p>
+	<br>
+	<p style="text-indent: 25px;">An alternative I was considering was:</p>
+	<br>
+	<p style="text-indent: 25px;"><.A HREF="..." INCLUDE>See photo</A></p>
+	<br>
+	<p style="text-indent: 25px;">I don’t much like adding more functionality to the <A> tag, but the idea here is to maintain compatibility with</p>
+	<p style="text-indent: 25px;">browsers that can not honour the INCLUDE parameter. The intention is that browsers which do understand</p>
+	<p style="text-indent: 25px;">INCLUDE, replace the anchor text (in this case “See photo”) with the included document (picture), while older or</p>
+	<p style="text-indent: 25px;">dumber browsers ignore the INCLUDE tag completely.</p>
+	<br>
+	<p>This proposal was never implemented, although the idea of providing text if an image is missing is <a href = "">an important</a></p>
+	<p><a href = "">accessibility technique</a> that was missing from Marc’s initial <.IMG> proposal. Years later, this feature was bolted on as the</p>
+	<p><a href=""><.img alt> attribute</a>, which Netscape promptly broke by <a href="">erroneously treating it as a tooltip.</a>
+	<br>
+	<p>A few hours after Tony posted his message, <a href="">Tim Berners-Lee responded:</a></p>
+	<br>
+	<p style="text-indent: 25px;">I had imagined that figues would be reprented as</p>
+	<br>
+	<p style="text-indent: 25px;"><.a name=fig1 href="fghjkdfghj" REL="EMBED, PRESENT">Figure </a></p>
+	<br>
+	<p style="text-indent: 25px;">where the relation ship values mean</p>
+	<br>
+	<p style="text-indent: 50px;">EMBED	 Embed this here when presenting it</p>
+	<p style="text-indent: 50px;">PRESENT	 Present this whenever the source document is presented</p>
+	<br>
+	<p style="text-indent: 25px;">Note that you can have various combinations of these, and if the browser doesn’t support either one, it doesn’t </p>
+	<p style="text-indent: 25px;">break.</p>
+	<br>
+	<p style="text-indent: 25px;">[I] see that using this as a method for selectable icons means nesting anchors. Hmmm. But I hadn’t wanted a </p>
+	<p style="text-indent: 25px;">special tag.</p>
+	<br>
+	<p>This proposal was never implemented, but the rel attribute is <a href="">still around.</a></p>
+	<br>
+	<p><a href="">Jim Davis added:</a></p>
+	<p style="text-indent: 25px;">It would be nice if there was a way to specify the content type, e.g.</p>
+	<br>
+	<p style="text-indent: 25px;"><.IMG HREF="http://nsa.gov/pub/sounds/gorby.au" CONTENT-TYPE=audio/basic></p>
+	<br>
+	<p style="text-indent: 25px;">But I am completely willing to live with the requirement that I specify the content type by file extension.</p>
+	<br>
+	<p>This proposal was never implemented, but Netscape did later add support for embedding of media objects with the <.embed> </p>
+	<p>element.</p>
+	<br>
+	<p><a href="">Marc Andreessen replied:</a></p>
+	<br>
+	<p style="text-indent: 25px;">This isn’t a substitute for the upcoming use of MIME as a standard document mechanism; this provides a 
+	</p>
+	<p style="text-indent: 25px;">necessary and simple implementation of functionality that’s needed independently from MIME.</p>
+	<br>
+	<p><a href="">Jay C. Weber responded:</a></p>
+	<br>
+	<p style="text-indent: 25px;">Let’s temporarily forget about MIME, if it clouds the issue. My objection was to the discussion of “how are we </p>
+	<p style="text-indent: 25px;">going to support embedded images” rather than “how are we going to support embedded objections in various </p>
+	<p style="text-indent: 25px;">media”.</p>
+	<br>
+	<p style="text-indent: 25px;">Otherwise, next week someone is going to suggest ‘lets put in a new tag <.AUD </p>
+	<p style="text-indent: 25px;">SRC="file://foobar.com/foo/bar/blargh.snd">‘ for audio.</p>
+	<br>
+	<p style="text-indent: 25px;">There shouldn’t be much cost in going with something that generalizes.</p>
+	<br>
+	<p>With the benefit of hindsight, it appears that Jay’s concerns were well founded. It took a little more than a week, but</p>
+	<p>HTML5 did finally add new <a href=""><.video></a> and <a href=""><.audio></a> elements.</p>
+	<br>
+	<p><a href = "">Responding to Jay’s original message, Dave Raggett said:</a></p>
+	<p style="text-indent: 25px;">True indeed! I want to consider a whole range of possible image/line art types, along with the possibility of</p>
+	<p style="text-indent: 25px;">format negotiation. Tim’s note on supporting clickable areas within images is also important.</p>
+	<br>
+	<p>Later in 1993, <a href="">Dave Raggett</a> proposed <a href="">HTML+</a> as an evolution of the HTML standard. The proposal was never implemented,</p>
+	<p>and it was superseded by <a href="">HTML 2.0.</a> HTML 2.0 was a “retro-spec,” which means it formalized features already in common</p>
+	<p>use. “<a href="">This specification brings together, clarifies, and formalizes a set of features</a> that roughly corresponds to the</p>
+	<p>capabilities of HTML in common use prior to June 1994.”</p></p>
+	<br>
+	<p>Dave later wrote <a href="">HTML 3.0</a>, based on his earlier HTML+ draft. Outside of the W3C’s own reference implementation, Arena,</p>
+	<p>HTML 3.0 was never implemented, and it was superseded by <a href="">HTML 3.2</a>, another “retro-spec”: “<a href="">HTML 3.2 adds widely</a></p>
+	<p><a href="">deployed features</a> such as tables, applets and text flow around images, while providing full backwards compatibility with the</p>
+	<p>existing standard HTML 2.0.”</p>
+	<br>
+	<p>Dave later co-authored <a href="">HTML 4.0</a>, developed <a href="">HTML Tidy</a>, and went on to help with XHTML, XForms, MathML, and other</p>
+	<p>modern W3C specifications.</p>
+	<br>
+	<p>Getting back to 1993, <a href="">Marc replied to Dave:</a></p>
+	<p style="text-indent: 25px;">Actually, maybe we should think about a general-purpose procedural graphics language within which we can </p>
+	<p style="text-indent: 25px;">embed arbitrary hyperlinks attached to icons, images, or text, or anything. Has anyone else seen</p>
+	<p style="text-indent: 25px;">Intermedia’s capabilities wrt this?</p>
+	<br>
+	<p><a href="">Intermedia</a> was a hypertext project from Brown University. It was developed from 1985 to 1991 and ran on A/UX, a Unix-</p>
+	<p>like operating system for early Macintosh computers.</p>
+	<br>
+	<p>The idea of a “general-purpose procedural graphics language” did eventually catch on. Modern browsers support both <a href="">SVG</a></p>
+	<p>(declarative markup with embedded scripting) and <a href=""><.canvas></a> (a procedural direct-mode graphics API), although the latter</p>
+	<p><a href="">started as a proprietary extension</a> before being “retro-specced” by the <a href="">WHATWG.</a></p>
+	<br>
+	<p><a href="">Bill Janssen replied:</a></p>
+	<br>
+	<p>Other systems to look at which have this (fairly valuable) notion are Andrew and Slate. Andrew is built with</p>
+	<p>_insets_, each of which has some interesting type, such as text, bitmap, drawing, animation, message, spreadsheet,</p>
+	<p>etc. The notion of arbitrary recursive embedding is present, so that an inset of any kind can be embedded in any</p>
+	<p>other kind which supports embedding. For example, an inset can be embedded at any point in the text of the text</p>
+	<p>widget, or in any rectangular area in the drawing widget, or in any cell of the spreadsheet.</p>
+	<br>
+	<p>“Andrew” is a reference to the<a href=""> Andrew User Interface System</a> (although at that time it was simply known as the Andrew </p>
+	<p><a href="">Project</a>).</p>
+	<br>
+	<p>Meanwhile, <a href="">Thomas Fine had a different idea:</a></p>
+	<br>
+	<p style="text-indent: 25px;">Here’s my opinion. The best way to do images in WWW is by using MIME. I’m sure postscript is already a</p>
+	<p style="text-indent: 25px;">supported subtype in MIME, and it deals very nicely with mixing text and graphics.</p>
+	<br>
+	<p style="text-indent: 25px;">But it isn’t clickable, you say? Yes your right. I suspect there is already an answer to this in display postscript.</p>
+	<p style="text-indent: 25px;">Even if there isn’t the addition to standard postscript is trivial. Define an anchor command which specifies the</p>
+	<p style="text-indent: 25px;">URL and uses the current path as a closed region for the button. Since postscript deals so well with paths, this</p>
+	<p style="text-indent: 25px;">makes arbitrary button shapes trivial.</p>
+	<br>
+	<p><a href="">Display Postscript</a> was an on-screen rendering technology co-developed by Adobe and NeXT.</a></p>
+	<br>
+	<p>This proposal was never implemented, but the idea that the best way to fix HTML is to replace it with something else </p>
+	<p>altogether <a href="">still pops up from time to time.</a></p>
+	<br>
+	<p><a href="">Tim Berners-Lee, March 2, 1993:</a></p>
+	<br>
+	<p style="text-indent: 25px;">HTTP2 allows a document to contain any type which the user has said he can handle, not just registered MIME</p>
+	<p style="text-indent: 25px;">types. So one can experiment. Yes I think there is a case for postscript with hypertext. I don’t know whether</p>
+	<p style="text-indent: 25px;">display postcript has enough. I know Adobe are trying to establish their own postscript-based “PDF” which will</p>
+	<p style="text-indent: 25px;">have links, and be readable by their proprietory brand of viewers.</p>
+	<br>
+	<p style="text-indent: 25px;">I thought that a generic overlaying language for anchors (Hytime based?) would allow the hypertext and the</p>
+	<p style="text-indent: 25px;">graphics/video standards to evolve separately, which would help both.</p>
+	<br>
+	<p style="text-indent: 25px;">Let the IMG tag be INCLUDE and let it refer to an arbitrary document type. Or EMBED if INCLUDE sounds like a cpp</p>
+	<p style="text-indent: 25px;">include which people will expect to provide SGML source code to be parsed inline — not what was intended.</p>
+	<br>
+	<p><a href="">HyTime</a> was an early, SGML-based hypertext document system. It loomed large in early discussions of HTML, and later 
+	XML.</p>
+	<br>
+	<p>Tim’s proposal for an <.INCLUDE> tag was never implemented, although you can see echoes of it in <.object>, <.embed>, and</p>
+	<p>the <.iframe> element.</p>
+	<br>
+	<p>Finally, on March 12, 1993,<a href="">Marc Andreessen revisited the thread:</a></p>
+	<br>
+	<p style="text-indent: 25px;">Back to the inlined image thread again — I’m getting close to releasing Mosaic v0.10, which will support inlined</p>
+	<p style="text-indent: 25px;">GIF and XBM images/bitmaps, as mentioned previously. …</p>
+	<br>
+	<p style="text-indent: 25px;">We’re not prepared to support INCLUDE/EMBED at this point. … So we’re probably going to go with <.IMG</p>
+	<p style="text-indent: 25px;">SRC="url"> (not ICON, since not all inlined images can be meaningfully called icons). For the time being, inlined</p>
+	<p style="text-indent: 25px;">images won’t be explicitly content-type’d; down the road, we plan to support that (along with the general</p>
+	<p style="text-indent: 25px;">adaptation of MIME). Actually, the image reading routines we’re currently using figure out the image format on</p>
+	<p style="text-indent: 25px;">the fly, so the filename extension won’t even be significant.</p>
+	<br>
+	<h2><center>❧</center></h2>
+	<br>
+	<h1><center><strong>AN UNBROKEN LINE</strong></center></h1>
+	<br>
+	<p>I am extraordinarily fascinated with all aspects of this almost-17-year-old conversation that led to the creation of an HTML</p>
+	<p>element that has been used on virtually every web page ever published. Consider:</p>
+	<p><img src="tree.png"></p>
+	<ul>
+		<li>HTTP still exists. HTTP successfully evolved from 0.9 into 1.0 and later 1.1. <a href=""> And still it evolves</a>.</li>
+		<li>HTML still exists. That rudimentary data format — it didn’t even support inline images! — successfully evolved into 2.0, 3.2, 4.0. HTML is an unbroken line. A twisted, knotted, snarled line, to be sure. There were plenty of “dead branches” in the evolutionary tree, places where standards-minded people got ahead of themselves (and ahead of authors and implementors). But still. Here we are, in 2010, and <a href=""> web pages from 1990</a> still render in modern browsers. I just loaded one up in the browser of my state-of-the-art Android mobile phone, and I didn’t even get prompted to “please wait while importing legacy format…”</li>
+		<li>HTML has always been a conversation between browser makers, authors, standards wonks, and other people who just showed up and liked to talk about angle brackets. Most of the successful versions of HTML have been “retro-specs,” catching up to the world while simultaneously trying to nudge it in the right direction. Anyone who tells you that HTML should be kept “pure” (presumably by ignoring browser makers, or ignoring authors, or both) is simply misinformed. HTML has never been pure, and all attempts to purify it have been spectacular failures, matched only by the attempts to replace it.</li>
+		<li>None of the browsers from 1993 still exist in any recognizable form. Netscape Navigator was <a href="">abandoned in 1998</a> and <a href="">rewritten from scratch</a> to create the Mozilla Suite, which was then <a hfef="">forked to create Firefox.</a> Internet Explorer had its humble “beginnings” in “Microsoft Plus! for Windows 95,” where it was bundled with some desktop themes and a pinball game. (But of course that browser <a href="">can be traced back further too.</a>)</li>
+		<li>Some of the operating systems from 1993 still exist, but none of them are relevant to the modern web. Most people today who “experience” the web do so on a PC running Windows 2000 or later, a Mac running Mac OS X, a PC running some flavor of Linux, or a handheld device like an iPhone. In 1993, Windows was at version 3.1 (and competing with OS/2), Macs were running System 7, and Linux was distributed via Usenet. (Want to have some fun? Find a graybeard and whisper “Trumpet Winsock” or “MacPPP.”)</li>
+		<li>Some of the same people are still around and still involved in what we now simply call “web standards.” That’s after almost 20 years. And some were involved in predecessors of HTML, going back into the 1980s and before.</li>
+		<li>Speaking of predecessors… With the eventual popularity of HTML and the web, it is easy to forget the contemporary formats and systems that informed its design. Andrew? Intermedia? HyTime? And HyTime was not some rinky-dink academic research project;<a href=""> it was an ISO standard.</a> It was approved for military use. It was Big Business. And you can read about it yourself… <a href="">on this HTML page, in your web browser.</a></li>
+	</ul>
+	<br>
+	<p> But none of this answers the original question: why do we have an <.img> element? Why not an <.icon> element? Or an</p>
+	<p><.include> element? Why not a hyperlink with an include attribute, or some combination of rel values? Why an <.img></p>
+	<p>element? Quite simply, because Marc Andreessen shipped one, and shipping code wins.</p>
+	<br>
+	<p>That’s not to say that all shipping code wins; after all, Andrew and Intermedia and HyTime shipped code too. Code is</p>
+	<p>necessary but not sufficient for success. And I certainly don’t mean to say that shipping code before a standard will produce</p>
+	<p>the best solution. Marc’s <.img> element didn’t mandate a common graphics format; it didn’t define how text flowed around</p>
+	<p>it; it didn’t support text alternatives or fallback content for older browsers. And 17 years later, <a href="">we’re still struggling with</a></p> 
+	<p><a href="">content sniffing,</a> and <a href="">it’s still a source of crazy security vulnerabilities.</a> And you can trace that all the way back, 17 years,</p>
+	<p>through the <a href="">Great Browser Wars,</a> all the way back to February 25, 1993, when Marc Andreessen offhandedly remarked,</p>
+	<p>“MIME, someday, maybe,” and then shipped his code anyway.</p>
+	<br>
+	<p>The ones that win are the ones that ship</p>
+	<br>
+	<h1><center>❧</center></h1>
+	<br>
+	<h1><center><strong>A TIMELINE OF HTML DEVELOPMENT FROM 1997 TO 2004</strong></center></h1>
+	<br>
+	<p>In December 1997, the World Wide Web Consortium (W3C) published <a href="">HTML 4.0</a> and promptly shut down the HTML</p>
+	<p>Working Group. Less than two months later, a separate W3C Working Group published <a href="">XML 1.0.</a> A mere three months after</p>
+	<p>that, the people who ran the W3C held a workshop called “<a href="">Shaping the Future of HTML</a>” to answer the question, “Has</p>
+	<p>W3C given up on HTML?” This was their answer:</p>
+	<br>
+	<p style="text-indent: 25px">In discussions, it was agreed that further extending HTML 4.0 would be difficult, as would converting 4.0 to be </p>
+	<p style="text-indent: 25px">an XML application. The proposed way to break free of these restrictions is to make a fresh start with the next </p>
+	<p style="text-indent: 25px">generation of HTML based upon a suite of XML tag-sets.</p>
+	<br>
+	<p>The W3C re-chartered the HTML Working Group to create this “suite of XML tag-sets.” Their first step, in December 1998, </p>
+	<p>was a draft of an interim specification that simply <a href="">reformulated HTML in XML</a>without adding any new elements or </p>
+	<p>attributes. This specification later became known as “<a href="">XHTML 1.0.</a>” It defined a new MIME type for XHTML documents, </p>
+	<p>application/xhtml+xml. However, to ease the migration of existing HTML 4 pages, it also included <a href="">Appendix C,</a> that </p>
+	<p>“summarizes design guidelines for authors who wish their XHTML documents to render on existing HTML user agents.” </p>
+	<p>Appendix C said you were allowed to author so-called “XHTML” pages but still serve them with the text/html MIME type.</p>
+	<br>
+	<p>Their next target was web forms. In August 1999, the same HTML Working Group published a first draft of <a href="">XHTML</a> </p>
+	<p><a href="">Extended Forms.</a>They set the expectations<a href=""></a> in the first paragraph:</p>
+	<br>
+	<p style="text-indent: 25px">After careful consideration, the HTML Working Group has decided that the goals for the next generation of </p>
+	<p style="text-indent: 25px">forms are incompatible with preserving backwards compatibility with browsers designed for earlier versions of </p>
+	<p style="text-indent: 25px">HTML. It is our objective to provide a clean new forms model (“XHTML Extended Forms”) based on a set of </p>
+	<p style="text-indent: 25px">well-defined requirements. The requirements described in this document are based on experience with a very </p>
+	<p style="text-indent: 25px">broad spectrum of form applications.</p>
+	<br>
+	<p>A few months later, “XHTML Extended Forms” was renamed “XForms” and <a href=""> moved to its own Working Group.</a> That group </p>
+	<p>worked in parallel with the HTML Working Group and finally published <a href="">the first edition of XForms 1.0</a> in October 2003.</p>
+	<br>
+	<p>Meanwhile, with the transition to XML complete, the HTML Working Group set their sights on creating “the next</p>
+	<p>generation of HTML.” In May 2001, they published <a href="">the first edition of XHTML 1.1</a>, that added <a href="">only a few minor features</a> on</p>
+	<p>top of XHTML 1.0, but also eliminated the “Appendix C” loophole. Starting with version 1.1, all XHTML documents were to</p>
+	<p>be served with a MIME type of application/xhtml+xml.</p>
+	<br>
+	<h1><center>❧</center></h1>
+	<br>
+	<h1><center><strong>EVERYTHING YOU KNOW ABOUT XHTML IS WRONG</strong></center></h1>
+	<br>
+	<p>Why are MIME types important? Why do I keep coming back to them? Three words: <a href="">draconian error handling.</a> Browsers</p>
+	<p>have always been “forgiving” with HTML. If you create an HTML page but forget the <./head> tag, browsers will display</p>
+	<p>the page anyway. (Certain tags implicitly trigger the end of the <.head> and the start of the <.body>.) You are supposed to</p>
+	<p>nest tags hierarchically — closing them in last-in-first-out order — but if you create markup like <.b><.i><./b><./i>, browsers</p>
+	<p>will just deal with it (somehow) and move on without displaying an error message.</p>
+	<p><img src="bird.png"></p>
+	<p>As you might expect, the fact that “broken” HTML markup still worked in web browsers led</p>
+	<p>authors to create broken HTML pages. A lot of broken pages. By some estimates, over 99% of</p>
+	<p>HTML pages on the web today have at least one error in them. But because these errors don’t</p>
+	<p>cause browsers to display visible error messages, nobody ever fixes them.</p>
+	<br>
+	<p>The W3C saw this as a fundamental problem with the web, and they set out to correct it. XML,</p>
+	<p>published in 1997, broke from the tradition of forgiving clients and mandated that all programs</p>
+	<p>that consumed XML must treat so-called “well-formedness” errors as fatal. This concept of</p>
+	<p>failing on the first error became known as “draconian error handling,” after the Greek leader</p>
+	<p><a href="">Draco</a> who instituted the death penalty for relatively minor infractions of his laws. When the</p>
+	<p>W3C reformulated HTML as an XML vocabulary, they mandated that all documents served with</p>
+	<p>the new application/xhtml+xml MIME type would be subject to draconian error handling. If</p>
+	<p>there was even a single well-formedness error in your XHTML page — such as forgetting the</p>
+	<p><./head> tag or improperly nesting start and end tags — web browsers would have no choice</p>
+	<p>but to stop processing and display an error message to the end user.</p>
+	<br>
+	<p>This idea was not universally popular. With an estimated error rate of 99% on existing pages, the ever-present possibility of</p>
+	<p>displaying errors to the end user, and the dearth of new features in XHTML 1.0 and 1.1 to justify the cost, web authors</p>
+	<p>basically ignored application/xhtml+xml. But that doesn’t mean they ignored XHTML altogether. Oh, most definitely not.</p>
+	<p>Appendix C of the XHTML 1.0 specification gave the web authors of the world a loophole: “Use something that looks kind</p>
+	<p>of like XHTML syntax, but keep serving it with the text/html MIME type.” And that’s exactly what thousands of web</p>
+	<p>developers did: they “upgraded” to XHTML syntax but kept serving it with a text/html MIME type.</p>
+	<br>
+	<p>Even today, millions of web pages claim to be XHTML. They start with the XHTML doctype on the first line, use</p>
+	<p>lowercase tag names, use quotes around attribute values, and add a trailing slash after empty elements like <.br /> and <.hr />.</p>
+	<p>But only a tiny fraction of these pages are served with the application/xhtml+xml MIME type that would trigger</p>
+	<p>XML’s draconian error handling. Any page served with a MIME type of text/html — regardless of doctype, syntax, or</p>
+	<p>coding style — will be parsed using a “forgiving” HTML parser, silently ignoring any markup errors, and never alerting end</p>
+	<p>users (or anyone else) even if the page is technically broken.</p>
+	<br>
+	<p>XHTML 1.0 included this loophole, but XHTML 1.1 closed it, and the never-finalized XHTML 2.0 continued the tradition of </p>
+	<p>requiring draconian error handling. And that’s why there are billions of pages that claim to be XHTML 1.0, and only a </p>
+	<p>handful that claim to be XHTML 1.1 (or XHTML 2.0). So are you really using XHTML? Check your MIME type. (Actually, if </p>
+	<p>you don’t know what MIME type you’re using, I can pretty much guarantee that you’re still using text/html.) Unless </p>
+	<p>you’re serving your pages with a MIME type of application/xhtml+xml, your so-called “XHTML” is XML in name only.</p>
+	<br>
+	<h1><center>❧</center></h1>
+	<br>
+	<h1><center><strong>A COMPETING VISION</strong></center></h1>
+	<p>In June 2004, the W3C held the Workshop on Web Applications and Compound Documents. Present at this workshop were</p>
+	<p>representatives of three browser vendors, web development companies, and other W3C members. A group of interested</p>
+	<p>parties, including the Mozilla Foundation and Opera Software, gave a presentation on their competing vision of the future</p>
+	<p>of the web: an evolution of the existing HTML 4 standard to include new features for modern web application developers.</p>
+	<br>
+	<p style="text-indent: 25px">The following seven principles represent what we believe to be the most critical requirements for this work.</p>
+	<br>
+	<p style="text-indent: 25px">Backwards compatibility, clear migration path</p>
+	<p style="text-indent: 60px">Web application technologies should be based on technologies authors are familiar with, including HTML,  </p>
+	<p style="text-indent: 60px">CSS, DOM, and JavaScript.</p>
+	<p style="text-indent: 60px">Basic Web application features should be implementable using behaviors, scripting, and style sheets in IE6 </p>
+	<p style="text-indent: 60px">today so that authors have a clear migration path. Any solution that cannot be used with the current high-</p>
+	<p style="text-indent: 60px">market-share user agent without the need for binary plug-ins is highly unlikely to be successful.</p>
+	<p style="text-indent: 25px">Well-defined error handling</p>
+	<p style="text-indent: 60px">Error handling in Web applications must be defined to a level of detail where User Agents do not have to </p>
+	<p style="text-indent: 60px">invent their own error handling mechanisms or reverse engineer other User Agents’.</p>
+	<p style="text-indent: 25px">Users should not be exposed to authoring errors</p>
+	<p style="text-indent: 60px">Specifications must specify exact error recovery behaviour for each possible error scenario. Error handling </p>
+	<p style="text-indent: 60px">should for the most part be defined in terms of graceful error recovery (as in CSS), rather than obvious and </p>
+	<p style="text-indent: 60px">catastrophic failure (as in XML).</p>
+	<p style="text-indent: 25">Practical use</p>
+	<p style="text-indent: 60px">Every feature that goes into the Web Applications specifications must be justified by a practical use case. </p>
+	<p style="text-indent: 60px">The reverse is not necessarily true: every use case does not necessarily warrant a new feature.</p>
+	<p style="text-indent: 60px">Use cases should preferably be based on real sites where the authors previously used a poor solution to </p>
+	<p style="text-indent: 60px">work around the limitation.</p>
+	<p style="text-indent: 25px">Scripting is here to stay</p>
+	<p style="text-indent: 60px">But should be avoided where more convenient declarative markup can be used.</p>
+	<p style="text-indent: 60px">Scripting should be device and presentation neutral unless scoped in a device-specific way (e.g. unless </p>
+	<p style="text-indent: 60px">included in XBL).</p>
+	<p style="text-indent: 25px">Device-specific profiling should be avoided</p>
+	<p style="text-indent: 60px">Authors should be able to depend on the same features being implemented in desktop and mobile versions </p>
+	<p style="text-indent: 60px">of the same UA.</p>
+	<p style="text-indent: 25px">Open process</p>
+	<p style="text-indent: 60px">The Web has benefited from being developed in an open environment. Web Applications will be core to the </p>
+	<p style="text-indent: 60px">web, and its development should also take place in the open. Mailing lists, archives and draft specifications </p>
+	<p style="text-indent: 60px">should continuously be visible to the public.</p>
+	<br>
+	<p>In a straw poll, the workshop participants were asked, “Should the W3C develop declarative extension to HTML and CSS</p>
+	<p>and imperative extensions to DOM, to address medium level Web Application requirements, as opposed to sophisticated,</p>
+	<p>fully-fledged OS-level APIs? (proposed by Ian Hickson, Opera Software)” The vote was 11 to 8 against. In their <a href="">summary of</a></p> 
+	<p><a href="">the workshop,</a> the W3C wrote, “At present, W3C does not intend to put any resources into the third straw-poll topic:</p>
+	<p>extensions to HTML and CSS for Web Applications, other than technologies being developed under the charter of current</p>
+	<p>W3C Working Groups.”</p>
+	<br>
+	<p>Faced with this decision, the people who had proposed evolving HTML and HTML forms had only two choices: give up,</p>
+	<p>or continue their work outside of the W3C. They chose the latter and registered the <a href="">whatwg.org</a> domain, and in June 2004, <a href ="">the</a></p>
+	<p><a href=""> WHAT Working Group was born.</a></p>
+	<br>
+	<h1><center>❧</center></h1>
+	<br>
+	<h1><center><strong>WHAT WORKING GROUP?</strong></center></h1>
+	<br>
+	<p>What the heck is the WHAT Working Group? I’ll let them <a href="">explain it for themselves:</a></p>
+	<br>
+	<p style="text-indent: 25px">The Web Hypertext Applications Technology Working Group is a loose, unofficial, and </p>
+	<p style="text-indent: 25px">open collaboration of Web browser manufacturers and interested parties. The group aims to </p>
+	<p style="text-indent: 25px">develop specifications based on HTML and related technologies to ease the deployment of </p>
+	<p style="text-indent: 25px">interoperable Web Applications, with the intention of submitting the results to a standards </p>
+	<p style="text-indent: 25px">organisation. This submission would then form the basis of work on formally extending </p>
+	<p style="text-indent: 25px">HTML in the standards track.</p>
+	<img src="burger.png">
+	<br>
+	<p style="text-indent: 25px">The creation of this forum follows from several months of work by private e-mail on </p>
+	<p style="text-indent: 25px">specifications for such technologies. The main focus up to this point has been extending </p>
+	<p style="text-indent: 25px">HTML4 Forms to support features requested by authors, without breaking backwards </p>
+	<p style="text-indent: 25px">compatibility with existing content. This group was created to ensure that future </p>
+	<p style="text-indent: 25px">development of these specifications will be completely open, through a publicly-archived</p>
+	<p style="text-indent: 25px">open mailing list.</p>
+	<br>
+	<p>The key phrase here is “without breaking backward compatibility.” XHTML (minus the Appendix </p>
+	<p>C loophole) is not backwardly compatible with HTML. It requires an entirely new MIME type, </p>
+	<p>and it mandates draconian error handling for all content served with that MIME type. XForms is </p>
+	<p>not backwardly compatible with HTML forms, because it can only be used in documents that are </p>
+	<p>served with the new XHTML MIME type, which means that XForms also mandates draconian error handling. All roads lead </p>
+	<p>to MIME.</p>
+	<br>
+	<p>Instead of scrapping over a decade’s worth of investment in HTML and making 99% of existing web pages unusable, the </p>
+	<p>WHAT Working Group decided to take a different approach: documenting the “forgiving” error-handling algorithms that </p>
+	<p>browsers actually used. Web browsers have always been forgiving of HTML errors, but nobody had ever bothered to write </p>
+	<p>down exactly how they did it. NCSA Mosaic had its own algorithms for dealing with broken pages, and Netscape tried to </p>
+	<p>match them. Then Internet Explorer tried to match Netscape. Then Opera and Firefox tried to match Internet Explorer. </p>
+	<p>Then Safari tried to match Firefox. And so on, right up to the present day. Along the way, developers burned thousands </p>
+	<p>and thousands of hours trying to make their products compatible with their competitors’.</p>
+	<br>
+	<p>If that sounds like an insane amount of work, that’s because it is. Or rather, it was. It took five years, but (modulo a few </p>
+	<p>obscure edge cases) the WHAT Working Group successfully documented <a href="">how to parse HTML</a> in a way that is compatible </p>
+	<p>with existing web content. Nowhere in the final algorithm is there a step that mandates that the HTML consumer should </p>
+	<p>stop processing and display an error message to the end user.</p>
+	<br>
+	<p>While all that reverse-engineering was going on, the WHAT working group was quietly working on a few other things, too. </p>
+	<p>One of them was a specification, initially dubbed <a href="">Web Forms 2.0,</a> that added new types of controls to HTML forms. (You’ll </p>
+	<p>learn more about web forms in <a href="">A Form of Madness.</a>) Another was a draft specification called “Web Applications 1.0,” that </p>
+	<p>included major new features like  <a href="">a direct-mode drawing canvas</a> and native support for  <a href="">audio and video without plugins.</a></p>
+	<br>
+	<h1><center>❧</center></h1>
+	<br>
+	<h1><center><strong>BACK TO THE W<sub>3</sub>C</strong></center></h1>
+	<br>
+	<p>For two and a half years, the W3C and the WHAT Working Group largely </p>
+	<p>ignored each other. While the WHAT Working Group focused on web </p>
+	<p>forms and new HTML features, the W3C HTML Working Group was busy </p>
+	<p>with version 2.0 of XHTML. But by October 2006, it was clear that the </p>
+	<p>WHAT Working Group had picked up serious momentum, while XHTML 2 </p>
+	<p>was still languishing in draft form, unimplemented by any major browser. </p>
+	<p>In October 2006, Tim Berners-Lee, the founder of the W3C itself, </p>
+	<p><a href="">announced that the W3C would work together with the WHAT Working </a></p>
+	<p><a href="">Group</a> to evolve HTML.</p>
+	<img src="loveC.png">
+	<br>
+	<p style="text-indent: 25px">Some things are clearer with hindsight of several years. It is </p>
+	<p style="text-indent: 25px">necessary to evolve HTML incrementally. The attempt to get the </p>
+	<p style="text-indent: 25px">world to switch to XML, including quotes around attribute values </p>
+	<p style="text-indent: 25px">and slashes in empty tags and namespaces all at once didn’t work. The large HTML-generating public did not </p>
+	<p style="text-indent: 25px">move, largely because the browsers didn’t complain. Some large communities did shift and are enjoying the fruits </p>
+	<p style="text-indent: 25px">of well-formed systems, but not all. It is important to maintain HTML incrementally, as well as continuing a </p>
+	<p style="text-indent: 25px">transition to well-formed world, and developing more power in that world.</p>
+	<br>
+	<p style="text-indent: 25px">The plan is to charter a completely new HTML group. Unlike the previous one, this one will be chartered to do </p>
+	<p style="text-indent: 25px">incremental improvements to HTML, as also in parallel xHTML. It will have a different chair and staff contact. It </p>
+	<p style="text-indent: 25px">will work on HTML and xHTML together. We have strong support for this group, from many people we have </p>
+	<p style="text-indent: 25px">talked to, including browser makers.</p>
+	<br>
+	<p style="text-indent: 25px">There will also be work on forms. This is a complex area, as existing HTML forms and XForms are both form </p>
+	<p style="text-indent: 25px">languages. HTML forms are ubiquitously deployed, and there are many implementations and users of XForms. </p>
+	<p style="text-indent: 25px">Meanwhile, the Webforms submission has suggested sensible extensions to HTML forms. The plan is, informed by </p>
+	<p style="text-indent: 25px">Webforms, to extend HTML forms.</p>
+	<br>
+	<p>One of the first things the newly re-chartered W3C HTML Working Group decided was to rename “Web Applications 1.0” </p>
+	<p>to “HTML5.” And here we are, diving into HTML5.</p>
+	<br>
+	<h1><center>❧</center></h1>
+	<br>
+	<h1><center><strong>POSTSCRIPT</strong></center></h1>
+	<br>
+	<p>In October 2009, the W3C <a href="">shut down the XHTML 2 Working Group</a> and <a href="">issued this statement to explain their decision:</a></p>
+	<br>
+	<p style="text-indent: 25px">When W3C announced the HTML and XHTML 2 Working Groups in March 2007, we indicated that we would </p>
+	<p style="text-indent: 25px">continue to monitor the market for XHTML 2. W3C recognizes the importance of a clear signal to the </p>
+	<p style="text-indent: 25px">community about the future of HTML.</p>
+	<br>
+	<p style="text-indent: 25px">While we recognize the value of the XHTML 2 Working Group’s contributions over the years, after discussion </p>
+	<p style="text-indent: 25px">with the participants, W3C management has decided to allow the Working Group’s charter to expire at the end </p>
+	<p style="text-indent: 25px">of 2009 and not to renew it.</p>
+	<br>
+	<p>The ones that win are the ones that ship.</p>
+
+
+	<br>
+	<h1><center>❧</center></h1>
+	<br>
+	<h1><center> FURTHER READING</center></h1>
+	<ul>
+		<li><a href="">The History of the Web,</a> an old draft by Ian Hickson</li>
+		<li><a href="">HTML/History,</a> by Michael Smith, Henri Sivonen, and others</li>
+		<li><a href="">A Brief History of HTML,</a> by Scott Reynen</li>
+	</ul>
+	<br>
+	<h1><center>❧</center></h1>
+	<br>
+	<p>This has been “How Did We Get Here?” The <a href="">full table of contents</a> has more if you’d like to keep reading.</p>
+	<br>
+	<table cellspacing="0">
+		<tr>
+			<th><strong> DID YOU KNOW?</strong></th>
+		</tr>
+		<tr>
+			<td>In association with Google Press, O’Reilly is distributing this book in a variety of
+			formats, including paper, ePub, Mobi, and DRM-free PDF. The paid edition is called
+			“HTML5: Up & Running,” and it is available now. This chapter is included in the paid
+			edition.</td>
+		</tr>
+		<tr>
+			<td>
+			If you liked this chapter and want to show your appreciation, you can <a href="">buy “HTML5: Up & Running” with this affiliate link</a> or <a href="">buy an electronic edition directly from O’Reilly.</a> You’ll get a book, and I’ll get a buck. I do not currently accept direct donations.</td>
+			<td><img src="mb.png"></td>
+		</tr>
+	</table>
+	<p><center> Copyright MMIX–MMXI <a href="">Mark Pilgrim</a></center></p>
+</body>
+</html>
