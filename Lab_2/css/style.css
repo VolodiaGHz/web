@@ -1,0 +1,103 @@
+
+*{
+	list-style: none;
+	font-family: 'Abril Fatface', cursive;
+}
+
+#Menu{
+
+	background:#483D8B;
+}
+
+ div ul ul{
+	display: none;
+	position: absolute;
+	top: 100%;
+}
+div ul{
+	padding:0;
+	margin:0;
+	list-style: none;
+	position: relative;
+}
+div ul li {
+	margin: 0px -7px 0 0;
+	display:inline-block;
+}
+div a {
+	display:block;
+	padding:0 10px;
+	color: #4169E1;
+	font-size:20px;
+	line-height: 60px;
+	text-decoration:none;
+}
+a:hover {
+	background: #E6E6FA;
+}
+div ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+}
+div ul li:hover > ul {
+    display:inherit;
+    background: #4B0082;
+}
+div ul ul li {
+    min-width:170px;
+    float:none;
+    display:list-item;
+    position: relative;
+}
+div ul ul ul {
+	position: absolute;
+	top:0;
+	left:100%;
+	background: #00BFFF;
+}
+#Logo{
+	width: 108px;
+	float: right;
+}
+/*body {
+	background: #6A5ACD;
+}*/
+#Team{
+	width: 100%;
+}
+p{
+	text-indent: 20px;
+	color:#191970;
+}
+h1{
+	text-align: center;
+	color: #8B008B;
+	font-weight: 500;
+}
+h3{
+	text-align: center;
+	color: black;
+	font-weight: 50;
+	color:#8B008B;
+	margin-bottom: -50px;
+}
+body{
+	background: #F0FFFF;
+}
+#ball{
+	width: 130px;
+	margin-left: 50px;
+	margin-bottom:30px;
+}
+#ball-2{
+	width: 130px;
+/*	margin-left:300px;*/
+}
+#space{
+	width: 25px;
+	height: 25px;
+}
+
+
+
