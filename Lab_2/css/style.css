@@ -34,7 +34,7 @@ nav ul li {
 nav a {
 	display:block;
 	padding:0 10px;
-	color: #b00b47;
+	color: red;
 	font-size:20px;
 	line-height: 60px;
 	text-decoration:none;
@@ -107,4 +107,21 @@ body{
 	height: 25px;
 }
 
+ header{
+          background-color: none;
+          transition: background-color 0.3s linear;
+        }
+        
+header:hover {
+	      background-color:	#483D8B; 
+}
+
+#Sub_menu{
+          background:none;
+          transition: background-color 0.3s linear;
+        }
+        
+#Sub_menu:hover {
+	      background-color: #483D8B; 
+	  }
 
