@@ -1,18 +1,23 @@
 
 *{
 	list-style: none;
-	font-family: 'Abril Fatface', cursive;
+	font-family: 'Abril Fatface', cursive; 
 }
+
 header {
 	top:0;
 	position: fixed;
+	background: #63B8FF;
 	width: 100%;
 }
+
 
 #Menu{
 
 	background:none;
 	display: inline-block;
+	color:red;
+
 
 }
 
@@ -40,7 +45,7 @@ nav a {
 	text-decoration:none;
 }
 a:hover {
-	background: #44d7eb;
+	background: ;
 }
 nav ul ul {
     display: none;
@@ -49,7 +54,7 @@ nav ul ul {
 }
 nav ul li:hover > ul {
     display:inherit;
-    background: none;
+    background: #F8F8FF;
 }
 nav ul ul li {
     min-width:170px;
@@ -71,18 +76,18 @@ nav ul ul li {
 
 
 p{
-	padding-left: 300px;
+	/*padding-left: 300px;
 	padding-right: 300px;
-	text-indent: 20px;
+	text-indent: 20px;*/
 	color:#501fe0;
-	text-align: center;
+	/*text-align: center;*/
 }
 h1{
 	text-align: center;
 	color: #6e073e;
 	font-weight: 500;
-
 }
+
 h3{
 	text-align: center;
 	color: black;

@@ -6,6 +6,7 @@
 }
 header{
 		top:0;
+            background: #63B8FF;
 	position: fixed;
 	width: 100%;
 }
@@ -28,37 +29,37 @@ header:hover {
 	  }
 
 #Menu{
-	position: absolute;
-	background:none;
-	display: inline-block;
+
+    background:none;
+    display: inline-block;
 
 }
 
  nav ul ul{
-	display: none;
-	position: absolute;
-	top: 100%;
+    display: none;
+    position: absolute;
+    top: 100%;
 }
 nav ul{
-	padding:0;
-	margin:0;
-	list-style: none;
-	position: relative;
+    padding:0;
+    margin:0;
+    list-style: none;
+    position: relative;
 }
 nav ul li {
-	margin: 0px -7px 0 0;
-	display:inline-block;
+    margin: 0px -7px 0 0;
+    display:inline-block;
 }
 nav a {
-	display:block;
-	padding:0 10px;
-	color: red;
-	font-size:20px;
-	line-height: 60px;
-	text-decoration:none;
+    display:block;
+    padding:0 10px;
+    color: red;
+    font-size:20px;
+    line-height: 60px;
+    text-decoration:none;
 }
 a:hover {
-	background: #44d7eb;
+    background: grey;
 }
 nav ul ul {
     display: none;
@@ -67,7 +68,7 @@ nav ul ul {
 }
 nav ul li:hover > ul {
     display:inherit;
-    background: none;
+    background: #F8F8FF;
 }
 nav ul ul li {
     min-width:170px;
@@ -80,33 +81,7 @@ nav ul ul li {
 	width: 108px;
 	float: right;
 }
-body{
-	background: #93dbf5;
-}
-table {
-	white-space: normal;
-	margin-left: 30%;
-    text-align: center;
-    border: 3px solid #6e073e;
-    background: #7B68EE;
-    margin-bottom: 30px;
-  }
-	td {
-   	border-right: 30px solid #7B68EE;
-  	border-left: 30px solid #7B68EE;
-  	border-bottom: 3px solid #48D1CC;
-  	/*color: #669;*/
- 	 padding: 12px 2px;
-}
-th{
-	text-align: center;
-	 font-weight: normal;
-  	border-bottom: 2px solid #C71585;
-  	border-right: 30px solid #7B68EE;
-  	border-left: 30px ;
-  	/*color: #039;*/
-  	padding: 12px 2px;
-}
+
 h1{
 	padding-top:2.5%;
 	color:#6e073e;
@@ -120,8 +95,7 @@ h1{
  
 @keyframes fadeIn {
     0% {
-        transform: scale(0);
-        opacity: 0.0;       
+        transform: scale(0);       
     }
     60% {
         transform: scale(1);  
