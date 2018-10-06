@@ -4,12 +4,60 @@
 		"selected_items":
 		[
 			[
-				"fon",
-				"font\tproperty"
+				"t",
+				"text-align\tproperty"
+			],
+			[
+				"tex",
+				"text-center"
+			],
+			[
+				"b",
+				"button"
 			],
 			[
 				"c",
-				"color\tproperty"
+				"container-fluid"
+			],
+			[
+				"conte",
+				"container-fluid"
+			],
+			[
+				"pa",
+				"padding-top\tproperty"
+			],
+			[
+				"ma",
+				"margin-left\tproperty"
+			],
+			[
+				"p",
+				"placeholder\tAttr"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"l",
+				"label\tTag"
+			],
+			[
+				"f",
+				"form\tTag"
+			],
+			[
+				"te",
+				"text-decoration-style\tproperty"
+			],
+			[
+				"text",
+				"text-decoration-color\tproperty"
+			],
+			[
+				"fon",
+				"font\tproperty"
 			],
 			[
 				"font",
@@ -36,14 +84,6 @@
 				"col-md-12"
 			],
 			[
-				"t",
-				"table-hover"
-			],
-			[
-				"b",
-				"background-color\tproperty"
-			],
-			[
 				"w",
 				"width\tproperty"
 			],
@@ -56,16 +96,8 @@
 				"jpg"
 			],
 			[
-				"text",
-				"text-center"
-			],
-			[
 				"i",
 				"inline-block\tdisplay"
-			],
-			[
-				"l",
-				"li\tTag"
 			],
 			[
 				"nav",
@@ -88,43 +120,61 @@
 				"html"
 			],
 			[
-				"te",
-				"text-align\tproperty"
-			],
-			[
 				"s",
 				"style\tAttr"
 			],
 			[
 				"bor",
 				"border-color\tproperty"
-			],
-			[
-				"p",
-				"position\tproperty"
-			],
-			[
-				"ma",
-				"margin\tproperty"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/C/Users/Admin/Desktop/web-master/Lab_2/index.html",
+			"file": "/C/Users/Admin/Desktop/web-master/Lab_2/News.html",
 			"settings":
 			{
-				"buffer_size": 14293,
+				"buffer_size": 9930,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "/C/Users/Admin/Desktop/web-master/Lab_2/Calendar.html",
 			"settings":
 			{
-				"buffer_size": 5250,
+				"buffer_size": 5140,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Admin/Desktop/web-master/Lab_2/index.html",
+			"settings":
+			{
+				"buffer_size": 14344,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html>\n<head>\n\t<title>FC Barcelona</title>\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"css/Fans_style.css\">\n\t<link href=\"https://fonts.googleapis.com/css?family=Abril+Fatface\" rel=\"stylesheet\">\n\t<meta charset=\"utf-8\">\n\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\t<!-- Latest compiled and minified CSS -->\n\t<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n\n\t<!-- Optional theme -->\n\t<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css\" integrity=\"sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp\" crossorigin=\"anonymous\">\n\t<!-- jQuery -->\n</head>\n<body style=\"background: #E0FFFF\">\n\t<header class=\"col-md-12\">\n\t\t<nav class=\"navbar navbar-default\">\n\t\t\t<div class=\"container-fluid\">\n\t\t\t\t<div class=\"navbar-header\">\n\t\t\t\t\t<button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#Menu\">\n\t\t\t\t\t\t<!-- <span class=\"sr-only\">Навигация</span> -->\n\t\t\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t\t</button>\n\t\t\t\t\t<img src=\"Logo.jpg\" alt=\"logo FC Barcelona\" id=\"Logo\" style=\"padding-right: 16px;\" >\n\t\t\t\t</div>\n\t\t\t\t<div id = \"Menu\" class=\"collapse navbar-collapse\">\n\t\t\t\t\t<ul class=\"nav navbar-nav\">\n\t\t\t\t\t\t<li ><a href=\"index.html\">Main</a></li>\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Matches <b class=\"caret\"></b></a>\n\t\t\t\t\t\t\t<ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t\t<li><a href=\"Calendar.html\">Calendar of matches</a></li>\n\t\t\t\t\t\t\t\t<li><a href=\"\">Next game</a></li>\n\t\t\t\t\t\t\t\t<li><a href=\"\">Raitings</a></li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li ><a href=\"News.html\">News</a></li>\n\t\t\t\t\t\t<li class=\"dropdown active\"><a href=\"Fans.html\">Fans</a></li>\n\t\t\t\t\t\t<li><a href=\"Contacs.html\">Contacs</a></li>\n\t\t\t\t\t\t<li><a href=\"Admin.html\">Admin</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</nav>\n\t</header>\n\t<content >\n\t\t<h1 class=\"col-md-12 text-center\" style=\"color: #6e073e; font-size:50pt; font-weight:1000\">FanZone</h1>\n\t\t<div id=\"ball1\" class=\"col-md-24 text-center\">\n\t\t\t<img src=\"ball.png\" alt=\"ball\" style=\"width: 25px; margin-top: 10px; margin-bottom:0px\">\n\t\t\t<img src=\"ball.png\" alt=\"ball\" style=\"width: 25px; margin-top: 10px; margin-bottom:0px\">\n\t\t\t<img src=\"ball.png\" alt=\"ball\" style=\"width: 25px; margin-top: 10px; margin-bottom:0px\">\n\t\t</div>\n\t\t<div class=\"col-md-12 text-center\">\n\t\t\t<p style=\"margin-left: 5%; margin-right: 5%; margin-top: 5% \">Lorem ipsum dolor sit amet. Neque porro quisquam est, omnis dolor sit, aspernatur aut fugit. Laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis. Exercitationem ullam corporis suscipit laboriosam, nisi. Error sit voluptatem accusantium doloremque. Laboriosam, nisi ut perspiciatis, unde omnis dolor sit, amet consectetur. Est, qui ratione voluptatem sequi nesciunt, neque porro quisquam est. Vel illum, qui alias consequatur aut fugit. Earum rerum hic tenetur a sapiente. Necessitatibus saepe eveniet, ut aut odit aut reiciendis voluptatibus maiores. Esse, quam nihil molestiae consequatur, vel eum iure reprehenderit, qui in. Doloremque laudantium, totam rem aperiam. Ad minima veniam, quis nostrum exercitationem. Veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut. Quidem rerum hic tenetur a sapiente delectus, ut enim. Beatae vitae dicta sunt, explicabo accusamus et aut fugit. Debitis aut fugit, sed quia dolor. Nisi ut enim ipsam voluptatem, quia consequuntur magni dolores et accusamus. Ipsum, quia non numquam eius modi tempora incidunt, ut perspiciatis.\n\t\t\t</p>\n\t\t\t<div class=\"col-md-12 \">\n\t\t\t\t<p style=\"margin-left:5%; margin-top:2.5% \">06.08.2018</p>\t\n\t\t\t</div>\n\t\t\t<div style=\"margin-left: 85%; margin-top: -15px\">\n\t\t\t\t<p style=\"font-weight: 500; font-size:15pt  \">FootballFan</p>\n\t\t\t</div>\n\t\t</div>\n\t\t<div id=\"ball1\" class=\"col-md-24 text-center\">\n\t\t\t<img src=\"ball.png\" alt=\"ball\" style=\"width: 25px; margin-top: 25px; margin-bottom:10px\">\n\t\t\t<img src=\"ball.png\" alt=\"ball\" style=\"width: 25px; margin-top: 25px; margin-bottom:10px\">\n\t\t\t<img src=\"ball.png\" alt=\"ball\" style=\"width: 25px; margin-top: 25px; margin-bottom:10px\">\n\t\t</div>\n\t\t<p style=\"margin-left: 5%; margin-right: 5%; margin-top: 5% \">Lorem ipsum dolor sit amet. Neque porro quisquam est, omnis dolor sit, aspernatur aut fugit. Laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis. Exercitationem ullam corporis suscipit laboriosam, nisi. Error sit voluptatem accusantium doloremque. Laboriosam, nisi ut perspiciatis, unde omnis dolor sit, amet consectetur. Est, qui ratione voluptatem sequi nesciunt, neque porro quisquam est. Vel illum, qui alias consequatur aut fugit. Earum rerum hic tenetur a sapiente. Necessitatibus saepe eveniet, ut aut odit aut reiciendis voluptatibus maiores. Esse, quam nihil molestiae consequatur, vel eum iure reprehenderit, qui in. Doloremque laudantium, totam rem aperiam. Ad minima veniam, quis nostrum exercitationem. Veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut. Quidem rerum hic tenetur a sapiente delectus, ut enim. Beatae vitae dicta sunt, explicabo accusamus et aut fugit. Debitis aut fugit, sed quia dolor. Nisi ut enim ipsam voluptatem, quia consequuntur magni dolores et accusamus. Ipsum, quia non numquam eius modi tempora incidunt, ut perspiciatis.\n\t\t</p>\n\t\t<div class=\"col-md-12 \">\n\t\t\t<p style=\"margin-left:5%; margin-top:2.5% \">06.08.2018</p>\t\n\t\t</div>\n\t\t<div style=\"margin-left: 85%; margin-top: -15px\">\n\t\t\t<p style=\"font-weight: 500; font-size:15pt  \">FootballFan</p>\n\t\t</div>\n\n\t</div>\n\n\t<div id=\"ball1\" class=\"col-md-24 text-center\">\n\t\t<img src=\"ball.png\" alt=\"ball\" style=\"width: 25px; margin-top: 25px; margin-bottom:100px\">\n\t\t<img src=\"ball.png\" alt=\"ball\" style=\"width: 25px; margin-top: 25px; margin-bottom:100px\">\n\t\t<img src=\"ball.png\" alt=\"ball\" style=\"width: 25px; margin-top: 25px; margin-bottom:100px\">\n\t</div>\n\n\t<div class=\"container col-md-24 \"id=\"Form\">\n\t\t<form role=\"form\">\n\t\t\t<div class=\"form-group\">\n\t\t\t\t<input type=\"FeadBack\" name=\"form-control\" placeholder=\"FeadBack\" style=\"width: 1000px; height: 250px;\">\n\t\t\t\t<button type=\"button\" class=\"btn btn-success\" style=\"margin-top: 16%; margin-left: 5%; width: 100px\">Enter</button>\n\t\t\t</div>\n\t\t</form>\n\t</div>\n\n\t\n</content>\n<div id=\"ball1\" class=\"col-md-24 text-center\">\n\t<img src=\"ball.png\" alt=\"ball\" style=\"width: 25px; margin-top: 50px; margin-bottom:10px\">\n\t<img src=\"ball.png\" alt=\"ball\" style=\"width: 25px; margin-top: 50px; margin-bottom:10px\">\n\t<img src=\"ball.png\" alt=\"ball\" style=\"width: 25px; margin-top: 50px; margin-bottom:10px\">\n</div>\n<hr>\n<footer class=\"col-md-12 text-center\">\n\t<!-- <img src=\"ball.png\" alt=\"ball\" id=\"ball\"> -->\n\t<img src=\"nike.png\" alt=\"nike logo\" style=\"width: 150px\">\n\t<img src=\"Rak.png\" alt=\"Rauten logo\" style=\"width: 150px\">\n\t<!-- <img src=\"ball.png\" alt=\"ball\" id=\"ball-2\" style=\"margin-left: 280px; margin-right:-30px; margin-bottom: 30px; \"> -->\n\t<img src=\"beko.png\" alt=\"Beko logo\" style=\"width: 150px\">\n\n\t<h4 style=\"text-align: center;color: purple\"><em>@All rigths reserved@</em></h4>\n</footer>\n\n\n\n\n<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js\"></script>\n<!-- Latest compiled and minified JavaScript -->\n<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\" integrity=\"sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa\" crossorigin=\"anonymous\"></script>\n</body>\n</html>",
+			"file": "/C/Users/Admin/Desktop/web-master/Lab_2/Fans.html",
+			"file_size": 7759,
+			"file_write_time": 131833236355016823,
+			"settings":
+			{
+				"buffer_size": 7632,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "News_Style.css",
+			"settings":
+			{
+				"buffer_size": 1476,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -133,16 +183,42 @@
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 1690,
-				"encoding": "UTF-8",
+				"buffer_size": 1659,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "style_news.css",
+			"file": "/C/Users/Admin/Desktop/web-master/Lab_2/Contacs.html",
 			"settings":
 			{
-				"buffer_size": 2248,
+				"buffer_size": 4489,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Admin/Desktop/web-master/Lab_2/Admin.html",
+			"settings":
+			{
+				"buffer_size": 5036,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Admin_style.css",
+			"settings":
+			{
+				"buffer_size": 1137,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Fans_style.css",
+			"settings":
+			{
+				"buffer_size": 1091,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -180,11 +256,13 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Admin/Desktop/TEST.html",
+		"/C/Users/Admin/Desktop/web-master/Lab_2/css/Contacs_style.css",
 		"/C/Users/Admin/Desktop/web-master/Lab_2/Calendar.html",
-		"/C/Users/Admin/Desktop/web-master/Lab_2/css/style_news.css",
 		"/C/Users/Admin/Desktop/web-master/Lab_2/index.html",
+		"/C/Users/Admin/Desktop/web-master/Lab_2/Fans.html",
+		"/C/Users/Admin/Desktop/web-master/Lab_2/css/style_news.css",
 		"/C/Users/Admin/Desktop/web-master/Lab_2/css/style.css",
+		"/C/Users/Admin/Desktop/TEST.html",
 		"/C/Users/Admin/Desktop/web-master/Lab_2/News.html",
 		"/C/Users/Admin/Downloads/Telegram Desktop/LB_1.DOC"
 	],
@@ -221,24 +299,52 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 7,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/Admin/Desktop/web-master/Lab_2/index.html",
+					"file": "/C/Users/Admin/Desktop/web-master/Lab_2/News.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14293,
+						"buffer_size": 9930,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1245,
-								1245
+								2038,
+								2038
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 378.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Admin/Desktop/web-master/Lab_2/Calendar.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5140,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2321,
+								2321
 							]
 						],
 						"settings":
@@ -250,24 +356,24 @@
 						"translation.y": 378.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "/C/Users/Admin/Desktop/web-master/Lab_2/Calendar.html",
+					"buffer": 2,
+					"file": "/C/Users/Admin/Desktop/web-master/Lab_2/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5250,
+						"buffer_size": 14344,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1900,
-								1900
+								2292,
+								2292
 							]
 						],
 						"settings":
@@ -276,27 +382,86 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 486.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "style.css",
+					"buffer": 3,
+					"file": "/C/Users/Admin/Desktop/web-master/Lab_2/Fans.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1690,
+						"buffer_size": 7632,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								123,
-								102
+								0,
+								7632
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1026.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "News_Style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1476,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								96,
+								96
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1659,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								71,
+								127
 							]
 						],
 						"settings":
@@ -307,37 +472,119 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "style_news.css",
+					"buffer": 6,
+					"file": "/C/Users/Admin/Desktop/web-master/Lab_2/Contacs.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2248,
+						"buffer_size": 4489,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								128,
-								128
+								832,
+								2075
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 127.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/C/Users/Admin/Desktop/web-master/Lab_2/Admin.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5036,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3198,
+								3198
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 973.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "Admin_style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1137,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								222,
+								222
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 594.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "Fans_style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1091,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1089,
+								1089
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 810.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

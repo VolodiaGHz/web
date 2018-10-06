@@ -2,12 +2,12 @@
 *{
 	list-style: none;
 	font-family: 'Abril Fatface', cursive;
-	background: 
+	
 }
 header{
 		top:0;
             background: #63B8FF;
-	position: fixed;
+	
 	width: 100%;
 }
  header{
@@ -28,16 +28,16 @@ header:hover {
 	      background-color: #483D8B; 
 	  }
 
-#Menu{
+/*#Menu{
 
     background:none;
     display: inline-block;
 
-}
+}*/
 
  nav ul ul{
     display: none;
-    position: absolute;
+    /*position: absolute;*/
     top: 100%;
 }
 nav ul{

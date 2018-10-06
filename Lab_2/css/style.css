@@ -2,12 +2,14 @@
 *{
 	list-style: none;
 	font-family: 'Abril Fatface', cursive; 
+	
+	
 }
 
 header {
 	top:0;
-	position: fixed;
-	background: #63B8FF;
+	
+	background: #00B2EE;
 	width: 100%;
 }
 
@@ -15,7 +17,7 @@ header {
 #Menu{
 
 	background:none;
-	display: inline-block;
+	/*display: inline-block;*/
 	color:red;
 
 
@@ -45,7 +47,7 @@ nav a {
 	text-decoration:none;
 }
 a:hover {
-	background: ;
+	background: #00B2EE;
 }
 nav ul ul {
     display: none;
@@ -94,9 +96,6 @@ h3{
 	font-weight: 50;
 	color:#8B008B;
 	margin-bottom: -50px;
-}
-body{
-	background: #93dbf5;
 }
 #ball{
 	width: 130px;
