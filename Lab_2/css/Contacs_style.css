@@ -76,7 +76,8 @@ nav ul ul li {
 }
 
 #Map{
-	margin-left: 110%
+	/*margin-left: 50%*/
+  margin-top:-20%;
 }
 p{
 	color:#501fe0;
