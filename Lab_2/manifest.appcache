@@ -1,0 +1,23 @@
+CACHE MANIFEST
+
+CACHE:
+css/style.css
+css/style_news.css
+css/News_style.css
+css/Fans_style.css
+css/Contacs_style.css
+css/Admin_style.css
+
+/Contacs.html
+/Fans.html
+/Index.html 
+/News.html
+/Calendar.html
+
+
+
+NETWORK:
+*
+
+FALLBACK:
+Admin.html /Error.html

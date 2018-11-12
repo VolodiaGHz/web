@@ -1,3 +1,23 @@
+#name, #text{
+  width: 75%;
+  margin: 5px
+}
+hr{
+  color: black;
+}
+#name{
+  height: 35px; 
+}
+#text{
+  height: 200px;  
+}
+input{
+  width: 100px;
+  margin-top: 16%; 
+  margin-left: 2.5%; 
+
+
+}
 header{
   background-color: none;
   transition: background-color 0.3s linear;
@@ -75,11 +95,14 @@ nav ul ul li {
   width: 108px;
   float: right;
 }
-
+span{
+  color: #6e073e;
+  font-size: 15pt;
+ 
+}
 p{
 	color:#501fe0;
-	text-align: left;
-	margin: 5%
+  font-size: 13pt;
 }
 #Form{
 	width: 100%;

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html manifest="/cache.manifest">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles creator</title>
+</head>
+<body>
+    <nav class="nav-block">
+        <ul class="nav-block_links">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="submit.html">Submit article</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="content-block">
+            <div class="content-block_form">
+                <div id="submiting-article">
+                    <label>Title</label>
+                    <input type="text" name="title" id="title" placeholder="Article title">
+
+                    <label>Article text</label>
+                    <textarea name="article" placeholder="Insert here text of your article"></textarea>
+                    <div class="content-block_button-block">
+                        <button type="button" class="content-block_button" id="submit">Submit</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <aside class="status-block">
+        <button type="button" class="status-block_button" id="status">Status</button>
+        <ul class="status-block_list" id="log-message">
+        </ul>
+    </aside>
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/db.js" type="text/javascript"></script>
+</body>
+</html>
