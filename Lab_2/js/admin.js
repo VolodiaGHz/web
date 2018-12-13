@@ -2,6 +2,9 @@ const getById = id => document.getElementById(id);
 const title = getById('Title');
 const news = getById('NewsField');
 // const file = getElementById('EnterFile')
+function isOnline() {
+    return window.navigator.onLine;
+}
 
 var list_news = [];
 

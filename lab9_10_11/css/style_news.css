@@ -1,0 +1,147 @@
+
+*{
+	list-style: none;
+	font-family: 'Abril Fatface', cursive;
+	
+}
+header{
+		top:0;
+            background: #63B8FF;
+	
+	width: 100%;
+}
+ header{
+          background-color: none;
+          transition: background-color 0.3s linear;
+        }
+        
+header:hover {
+	      background-color:	#483D8B; 
+}
+
+#Sub_menu{
+          background:none;
+          transition: background-color 0.3s linear;
+        }
+        
+#Sub_menu:hover {
+	      background-color: #483D8B; 
+	  }
+
+/*#Menu{
+
+    background:none;
+    display: inline-block;
+
+}*/
+
+ nav ul ul{
+    display: none;
+    /*position: absolute;*/
+    top: 100%;
+}
+nav ul{
+    padding:0;
+    margin:0;
+    list-style: none;
+    position: relative;
+}
+nav ul li {
+    margin: 0px -7px 0 0;
+    display:inline-block;
+}
+nav a {
+    display:block;
+    padding:0 10px;
+    color: red;
+    font-size:20px;
+    line-height: 60px;
+    text-decoration:none;
+}
+a:hover {
+    background: grey;
+}
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+}
+nav ul li:hover > ul {
+    display:inherit;
+    background: #F8F8FF;
+}
+nav ul ul li {
+    min-width:170px;
+    float:none;
+    display:list-item;
+    position: relative;
+}
+
+#Logo{
+	width: 108px;
+	float: right;
+}
+
+h1{
+	padding-top:2.5%;
+	color:#6e073e;
+	text-align: center;
+}
+
+#Calendar{
+    animation-name: fadeIn;
+    animation-duration: 2s;  
+}
+ 
+@keyframes fadeIn {
+    0% {
+        transform: scale(0);       
+    }
+    60% {
+        transform: scale(1);  
+    }
+    80% {
+        transform: scale(1);
+    }   
+    100% {
+        transform: scale(1);
+    }       
+}
+ h1{
+    animation-name: slideRight;
+    animation-duration: 2s; 
+    animation-timing-function: ease-in-out; 
+    visibility: visible !important; 
+}
+ 
+@keyframes slideRight {
+    0% {
+        transform: translateX(-150%);
+    }
+    50%{
+        transform: translateX(0%);
+    }        
+    100% {
+        transform: translateX(0%);
+    }   
+}
+#ball1 {
+    animation-name: fadeIn;
+    animation-duration: 2s;  
+}
+ 
+@keyframes fadeIn {
+    0% {
+        transform: scale(0);
+        opacity: 0.0;       
+    }
+    60% {
+        transform: scale(1);  
+    }
+    80% {
+        transform: scale(1);
+    }   
+    100% {
+        transform: scale(1);
+    }       
+}
