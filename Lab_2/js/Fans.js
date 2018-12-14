@@ -1,8 +1,6 @@
-  const getById = id => document.getElementById(id);
-  const namearea = getById('name');
-  const textarea = getById('text');
-  const feedbackContainer = getById('reviewsList');
-  const form = getById('form');
+
+var useLocalStorage = false;
+window.isOnline = () => this.navigator.onLine;
 
 const feedbackArea = (name, text, date, time) => ` 
     <div class="container">
@@ -12,62 +10,127 @@ const feedbackArea = (name, text, date, time) => `
         ${text}
         </p>
         <br>
-        <span class="review-date col-md-6">${date}, ${time}</span>
+        <span class="review-date col-md-6">${date}</span>
         <span class="review-author col-md-6">${name}</span>
     </div>
     <div class="divider"></div>
     <div id="ball1" class="col-md-24 text-center">
-		<img src="ball.png" alt="ball" style="width: 25px; margin-top: 30px; margin-bottom:30px">
-		<img src="ball.png" alt="ball" style="width: 25px; margin-top: 30px; margin-bottom:30px">
-		<img src="ball.png" alt="ball" style="width: 25px; margin-top: 30px; margin-bottom:30px">
-	</div>
+    <img src="ball.png" alt="ball" style="width: 25px; margin-top: 30px; margin-bottom:30px">
+    <img src="ball.png" alt="ball" style="width: 25px; margin-top: 30px; margin-bottom:30px">
+    <img src="ball.png" alt="ball" style="width: 25px; margin-top: 30px; margin-bottom:30px">
+  </div>
 `
 
-function isOnline() {
-    return window.navigator.onLine;
+class Feedback{
+  constructor(name, text, date){
+    this.name = name;
+    this.text = text;
+    this.date = date;
+  }
 }
 
-var feedbacs = [];
+function addToStorage(feedback){
+  if(useLocalStorage){
+      var feedbackItem = localStorage.getItem('feedbacks');
+      if (feedbackItem !== null) {
+          feedbacks = JSON.parse(feedbackItem);
+        }
+    feedbacks.push(feedback);
+    localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
+    return false;
+  }
+  else{
+    var openDB = indexedDB.open("feedback", 1);
+
+    openDB.onerror = function(event){
+      alert("Error when adding feedback to DataBase")
+    };
+    openDB.onsuccess = function(event){
+      var db = openDB.result;
+      var trans = db.transaction(["feedbacks"], "readwrite");
+      var store = trans.objectStore("feedbacks");
+      var addFeedback = store.put(feedback);
+      addFeedback.onsuccess = function(event){
+        alert("Feedback added");
+      }
+      addFeedback.onerror = function(event){
+        alert("Error when adding Feedback")
+      }
+      trans.oncomplete = function(){
+        db.close();
+      }
+    };
+  }
+}
+
+
+function show() {
+   if (isOnline()){
+    if(useLocalStorage){
+        var feedbackItem = localStorage.getItem('feedbacks');
+        if (feedbackItem !== null) {
+            feedbacks = JSON.parse(feedbackItem);
+          }
+      if ((typeof feedbacks !== 'undefined') && (feedbacks.length > 0)) {
+        for(var i = 0; i < feedbacks.length; i++) {
+          createFeedback(feedbacks[i]);
+        }
+      }
+    }
+    else if (!isOnline()) return; 
+    else{
+        var openDB = indexedDB.open("feedback", 1);
+        openDB.onupgradeneeded = function() {
+          var db = openDB.result;
+          var store = db.createObjectStore("feedbacks", {keyPath: "name"});
+          store.createIndex("name", "name", {unique: false});
+          store.createIndex("text", "text", {unique: false});
+          store.createIndex("date", "date", {unique: false});
+        }
+        openDB.onsuccess = function(event){
+          var db = openDB.result;
+          var trans = db.transaction("feedbacks", "readwrite");
+          var store = trans.objectStore("feedbacks");
+          store.openCursor().onsuccess = function(event){
+            var cursor = event.target.result;
+            if (cursor) {
+              var tempFeed = new Feedback(cursor.value.name, cursor.value.text, cursor.value.date);
+              createFeedback(tempFeed);
+              //var request = db.transaction(["feedbacks"], "readwrite").objectStore("feedbacks").delete(cursor.primaryKey);
+              cursor.continue();
+          }
+        }
+        trans.oncomplete = function(){
+          db.close();
+        }
+      }
+    }
+  }else{
+  return;
+}
+}
 
 function complete(){
-  if (namearea.value.length == 0 && textarea.value.length == 0){ 
-    alert("Всі поля повинні бути заповненні") 
+  var comment = document.getElementById("text");
+  var name = document.getElementById("name");
+  var date = new Date();
+  dateString = date.toLocaleDateString()+ ", " + date.toLocaleTimeString();
+  if(name.value == ""){
+    alert("Введіть ім'я!");
     return;
   }
-
-  const date = new Date();
-  if(!isOnline()){
-      var fb = {
-        name:document.getElementById('name').value,
-        text: document.getElementById('text').value
-      }
-    
-      feedbacs.push(fb);
-
-      localStorage.setItem("feedbacs",JSON.stringify(feedbacs));
-
-      console.log(feedbacs);
-    }if(isOnline()){
-      console.log("Додається на сервер");
-      $('#reviewsList').prepend(
-      feedbackArea(document.getElementById('name').value, document.getElementById('text').value, date.toLocaleDateString(), date.toLocaleTimeString())
-      );
-    }
-  
-  
-  document.getElementById('name').value = '';
-    document.getElementById('text').value = '';
-}
-	function addElementLocalStorig(){
-  const date = new Date();
-  if(isOnline()){
-    for(var i = 0; i < JSON.parse(localStorage.getItem("feedbacs")).length ;i++){
-      $('#reviewsList').prepend(
-          feedbackArea(JSON.parse(localStorage.getItem("feedbacs"))[i].name,
-            JSON.parse(localStorage.getItem("feedbacs"))[i].text,
-            date.toLocaleDateString(), date.toLocaleTimeString())
-        );
-    }
+  if(comment.value == ""){
+    alert("Введіть відгук!");
+    return;
   }
+  var feedback = new Feedback(name.value, comment.value, dateString);
+  addToStorage(feedback);
+  createFeedback(feedback);
+  name.value = "";
+  text.value = "";
 }
-addElementLocalStorig();
+
+function createFeedback(feedback){
+  $('#container').prepend(feedbackArea(feedback.name,feedback.text,feedback.date));
+}
+show();

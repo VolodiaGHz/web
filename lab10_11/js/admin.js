@@ -64,11 +64,6 @@ const onSubmitPress = async (e) => {
 
   var news = new News(caption.value, text.value, fileInput.value);
 
-  // if (!isOnline()) {
-  //   writeLocally(news);
-  // } else {
-  //   console.log('Емуляція запиту до сервера...');
-  // }
 
   await service.sendToServer({
     title: caption.value,

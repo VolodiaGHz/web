@@ -71,7 +71,6 @@ return `
 `
 }
 
-//REST
 const service = new ServerService();
 
 const initAndRenderData = async () => {
@@ -86,50 +85,6 @@ const initAndRenderData = async () => {
        feedbackTemplate(tempFeedback),
          );
    });
-  // if(useLocalStorage){
-  //     if (isOnline()) return;
-  //     const data = localStorage.getItem('feedbacks-data');
-
-  //     if (!data) {
-  //       console.log('Нема доступних локальних даних');
-  //     } else {
-  //       JSON.parse(data).forEach(({ title, value, date, time }) => {
-  //           var tempFeedback = new Feedback(title, value, date, time);
-  //           $('#container').prepend(
-  //           feedbackTemplate(tempFeedback),
-  //           );
-  //       });
-  //     }
-  // } else {
-  //     var openDB = indexedDB.open("feedbacks-data", 1);
-  //     openDB.onupgradeneeded = function() {
-  //         var db = openDB.result;
-  //         var store = db.createObjectStore("feedbacks", {keyPath: "name"});
-  //         store.createIndex("name", "name", { unique: false });
-  //         store.createIndex("text", "text", { unique: false });
-  //         store.createIndex("date", "date", { unique: false });
-  //         store.createIndex("time", "time", { unique: false });
-  //     }
-  //     openDB.onsuccess = function(event) {
-  //       var db = openDB.result;
-  //       var tx = db.transaction("feedbacks", "readwrite");
-  //         var store = tx.objectStore("feedbacks");
-  //         store.openCursor().onsuccess = function(event) {
-  //         var cursor = event.target.result;
-
-  //         if (cursor) {
-  //           var tempFeed = new Feedback(cursor.value.name, cursor.value.text, cursor.value.date, cursor.value.time);
-  //             //console.log(tempFeed);
-  //             //feedbacks.push(tempFeed);
-  //             $('#container').prepend(feedbackTemplate(tempFeed));
-  //             cursor.continue();
-  //         }
-  //       };
-  //         tx.oncomplete = function(){
-  //           db.close();
-  //         }
-  //     }
-  // }
 }
 
 function writeLocally(feedback){
@@ -176,12 +131,6 @@ const onSubmitPress = async (e) => {
 
   var feedback = new Feedback(namearea.value, textarea.value, date.toLocaleDateString(), date.toLocaleTimeString());
   
-  // $('#container').prepend(
-  //   feedbackTemplate(feedback)
-  // );
-
-  // writeLocally(feedback);
-
   await service.sendToServer({
     name: namearea.value,
     text: textarea.value,
@@ -200,7 +149,6 @@ const onOnline = () => {
 }
 
 const onOffline = () => {
-  // initAndRenderData();
   console.log('Відсутнє підключення, перемикаюсь у офлайн режим...');
 }
 
